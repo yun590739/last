@@ -428,7 +428,7 @@ if not st.session_state["logged_in"]:
                     st.session_state["username"] = user
                     st.rerun()
                 else:
-                    st.error("❌ 아이디 또는 비밀번호가 일치하지 않습니다.")
+                    st.error("아이디 또는 비밀번호가 일치하지 않습니다.")
             st.markdown("</div>", unsafe_allow_html=True)
 
         with menu[1]:
@@ -440,11 +440,11 @@ if not st.session_state["logged_in"]:
             if st.button("회원가입 완료", key="btn_register"):
                 if new_user and new_pw:
                     if register_user(new_user, new_pw):
-                        st.success("🎉 가입 성공! 로그인 탭에서 로그인해 주세요.")
+                        st.success("가입 성공! 로그인 탭에서 로그인해 주세요.")
                     else:
-                        st.error("❌ 이미 존재하는 아이디입니다.")
+                        st.error("이미 존재하는 아이디입니다.")
                 else:
-                    st.warning("⚠️ 모든 칸을 입력해 주세요.")
+                    st.warning("모든 칸을 입력해 주세요.")
             st.markdown("</div>", unsafe_allow_html=True)
 
 # --- B. 로그인 완료 상태 (메인 대시보드 및 리포트) ---
@@ -474,7 +474,7 @@ else:
     """, unsafe_allow_html=True)
 
     # 하단 피그마 스타일 탭바 메뉴
-    tab_home, tab_cal, tab_caff, tab_sleep = st.tabs(["㗊 홈", "📅 달력", "☕ 카페인", "🌙 수면"])
+    tab_home, tab_cal, tab_caff, tab_sleep = st.tabs(["㗊 홈", "📅 생리주기", "☕ 카페인", "🌙 수면"])
 
     # ----------------------------------------------------------
     # 🏠 홈 대시보드 탭
@@ -559,7 +559,7 @@ else:
                 </div>
             """, unsafe_allow_html=True)
         else:
-            st.info("💡 정확한 주기를 도출하기 위해 하단의 [달력] 탭에서 지난 생리 기록을 입력해 주세요.")
+            st.info("💡 정확한 주기를 도출하기 위해 하단의 [생리주기] 탭에서 지난 생리 기록을 입력해 주세요.")
         st.markdown("</div>", unsafe_allow_html=True)
 
         # [UI 카드 4] 학사 일정 리스트
